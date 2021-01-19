@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value = "true"/>
+	<constant name="struts.objectFactory" value="spring" />
+
+    <package name="default"  extends="struts-default">
+    	<action name="bookList" class="bookAction" method="bookList">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="bookAdd" class="bookAction" method="bookAdd">
+			<result name="success" type="redirectAction">bookList</result>
+		</action>
+		<action name="bookDelete" class="bookAction" method="bookDelete">
+			<result name="success" type="redirectAction">bookList</result>
+		</action>
+		<action name="bookAddPre" class="bookAction" method="bookAddPre">
+			<result name="success">/bookAdd.jsp</result>
+		</action>
+		
+    
+    </package>
+
+</struts>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <bean name="po.Publisher" table="publisher">
+        <id name="id" column="id"></id>
+        <property name="PublisherNum" column="publisherNum"></property>
+        <property name="publisherName" column="publisherName"></property>
+    </bean>
+</config>

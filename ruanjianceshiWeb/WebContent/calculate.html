@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function a()
+	{
+		var num1 = document.cal.num1.value;
+		var num2 = document.cal.num2.value;
+		var method = document.getElementsByName("method");
+		var methodval = "";
+		for(var i=0;i<method.length;i++){
+			if(method[i].checked){
+				mathodval = method[i].value;
+				break;
+			}
+		}
+		if(mathodval.toString()=="add"){
+			document.getElementById('rs').value=parseInt(num1) + parseInt(num2);
+		}
+		if(mathodval.toString()=="sub"){
+			document.getElementById('rs').value=parseInt(num1) - parseInt(num2);
+		}
+		if(mathodval.toString()=="mul"){
+			document.getElementById('rs').value=parseInt(num1) * parseInt(num2);
+		}
+		if(mathodval.toString()=="dev"){
+			document.getElementById('rs').value=parseInt(num1) / parseInt(num2);
+		}
+	}
+</script>
+</head>
+<body>
+<table>
+	<form name="cal">
+		<tr><td>第一个操作数:</td><td><input type="text" name="num1"></td></tr>
+		<tr><td>第二个操作数:</td><td><input type="text" name="num2"></td></tr>
+		<tr><td colspan="2">请选择操作:</td></tr>
+		<tr><td colspan="2">
+			<input type="radio" name="method" value="add">+
+			<input type="radio" name="method" value="sub">-
+			<input type="radio" name="method" value="mul">*
+			<input type="radio" name="method" value="dev">/
+		</tr>
+		<tr align="center"><td colspan="2"><input type="button" name="action" value="=" onclick="a()"/></td></tr>
+		<tr><td>结果是:</td><td><input type="text" id="rs"></td></tr>
+	</form>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>添加书籍</title>
+</head>
+<body>
+	
+	<table border="1" bgcolor="#a1a1a1">
+		<tr height="100px">
+			<th align="center" bgcolor="#f0ffff"  colspan="2">网上书店后台管理系统</th>
+		</tr>
+		<tr bgcolor="#f0fff0">
+			<td width="30%" valign="top">
+				<ul>
+					<li><a href="bookAdd.html"><font size="2sp"
+							color="#ff69b4">书籍信息管理</font></a></li>
+					<li><a href="#"><font color="#ff1493" size="2sp">其他模块管理</font></a></li>
+					<li><a href="#"><font color="#ff1493" size="2sp">其他模块管理</font></a></li>
+					<li><a href="#"><font color="#ff1493" size="2sp">其他模块管理</font></a></li>
+					<li><a href="#"><font color="#ff1493" size="2sp">其他模块管理</font></a></li>
+				</ul>
+			</td>
+			<td width="70%" valign="top">
+				<form action="bookadd.jsp" method="post">
+					<table >
+						<tr>
+							<th align="left" colspan="2">基本信息添加</th>
+						</tr>
+						<tr>
+							<td width="30%" align="left">书号：</td>
+							<td width="70%"><input type="text" name="bookId" /></td>
+						</tr>
+						<tr>
+							<td>书名：</td>
+							<td><input type="text" name="bookName" /></td>
+						</tr>
+						<tr>
+							<td>作者：</td>
+							<td><input type="text" name="author" /></td>
+						</tr>
+						<tr>
+							<td>出版社：</td>
+							<td><select name="publisherId">
+									<option value="0">--请选择--</option>
+									<option value="清华大学出版社">清华大学出版社</option>
+									<option value="机械出版社">机械出版社</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td>出版日期：</td>
+							<td><input type="text" name="pubdate" maxlength="20"></td>
+						</tr>
+						<tr>
+							<td>价格：</td>
+							<td><input type="text" name="price" /></td>
+						</tr>
+						<tr>
+							<td>库存位置：</td>
+							<td><input type="text" name="place" /></td>
+						</tr>
+						<tr>
+							<td>类别：</td>
+							<td><input type="radio" name="type" value="普通" />普通&nbsp; <input
+								type="radio" name="type" value="新书" />新书&nbsp; <input
+								type="radio" name="type" value="精品" />精品&nbsp;</td>
+						</tr>
+						<tr>
+							<td>内容简介：</td>
+							<td><textarea name="content" cols="50" rows="5"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input name="submit" type="submit" value="保存"/> 
+								<input name="reset" type="reset" value="重置"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</td>
+		</tr>
+
+	</table>
+
+</body>
+</html>

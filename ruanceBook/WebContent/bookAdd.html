@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>bookAdd</title>
+<script type="text/javascript" src="calendar/calendar.js"></script>
+<script type="text/javascript" src="script/checkForm.js"></script>
+</head>
+<body bgcolor="GhostWhite">
+	<form name="myForm" action="addBook" method="post"
+		onsubmit="return checkForm();">
+		<table width="100%" cellspacing="10" cellpadding="0">
+			<tr>
+				<th bgcolor="LightCyan" align="left" width="100%" colspan="2">基本信息</th>
+			</tr>
+			<tr>
+				<td width="10%">书号:</td>
+				<td><input type="text" name="bookNumber" readonly="readonly" /></td>
+			</tr>
+			<tr>
+				<td>书名:</td>
+				<td><input type="text" name="bookName" /></td>
+			</tr>
+			<tr>
+				<td>作者:</td>
+				<td><input type="text" name="writer" /></td>
+			</tr>
+			<tr>
+				<td>出版社:</td>
+				<td><select name="publisher">
+						<option>--请选择--</option>
+						<option value="清华大学出版社">清华大学出版社</option>
+						<option value="合肥大学出版社">合肥大学出版社</option>
+						<option value="人民邮电出版社">人民邮电出版社</option>
+						<option value="北京大学出版社">北京大学出版社</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>出版日期:</td>
+				<td><input type="text" name="sellDate"
+					onclick="calendar.show(this)" /></td>
+			</tr>
+			<tr>
+				<td>库存位置:</td>
+				<td><select name="place">
+						<option>--请选择--</option>
+						<option value="南一区">南一区</option>
+						<option value="南二区">南二区</option>
+						<option value="南三区">南三区</option>
+						<option value="南四区">南四区</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>是否在馆:</td>
+				<td><select name="zhuangtai">
+						<option value="1">在馆</option>
+						<option value="2">已借出</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="padding-left: 100px"><input
+					type="submit" value="保存" /> <input type="reset" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

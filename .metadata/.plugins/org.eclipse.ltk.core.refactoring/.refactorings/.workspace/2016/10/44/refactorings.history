@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;javaEE数据库&apos; to &apos;javaEEDateBase&apos;&#x0D;&#x0A;- Original element: &apos;javaEE数据库&apos;&#x0D;&#x0A;- Renamed element: &apos;javaEE数据库&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;javaEE数据库&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=javaEE数据库" name="javaEEDateBase" references="true" stamp="1477273773018" version="1.0"/>
+</session>

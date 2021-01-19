@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Dao -->
+	<bean id="bookDaoBean" class="dao.BookDao" />
+	<bean id="publisherDaoBean" class="dao.PublisherDao" />
+	
+	<!-- service 依赖注入常用方式1：设值注入-->
+	<bean id="bookServiceBean" class="service.BookService">
+		<property name="bookDao" ref="bookDaoBean" />
+		<property name="publisherDao" ref="publisherDaoBean" />
+	</bean>
+	
+	<!-- service 依赖注入常用方式2：构造注入 -->
+	<bean id="bookServiceBean2" class="service.BookService2">
+		<constructor-arg index="0" ref="bookDaoBean"></constructor-arg>
+		<constructor-arg index="1" ref="publisherDaoBean"></constructor-arg>
+	</bean>
+</beans>

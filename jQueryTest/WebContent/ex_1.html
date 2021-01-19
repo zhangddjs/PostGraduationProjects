@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript" src="scripts/jquery-1.6.2.min.js"></script>
+  <script type="text/javascript">
+  	$(function(){
+  		$("li").click(function(){
+  			alert("^.^~~" + $(this).text());
+  		})
+  		$(":submit").click(function(){
+  			if($(":radio[name=add]:checked").length==0){
+  				alert("请选择类型");
+	  			return false;
+  			} else if ($.trim($(":text[name=name]").val()).length==0) {
+  				alert("请输入内容");
+	  			return false;
+  			} else {
+  				$("<li>" + $(":text").val() + "</li>").appendTo("#" + $(":radio[name=add]:checked").val())
+  				.click(function(){
+  					alert("^.^~~" + $(this).text());
+  				});
+  				return false;
+  			}
+  		})
+  	})
+  </script>
+ </head>
+ <body>
+  <p>你喜欢哪个城市？</p>
+  <ul id="city">
+   <li>北京</li>
+   <li>上海</li>
+   <li>广州</li>
+   <li>深圳</li>
+  </ul>
+  <br/><br/>
+  <p>你喜欢哪个游戏？</p>
+  <ul id="game">
+   <li>刺客信条</li>
+   <li>使命召唤</li>
+   <li>fifa</li>
+   <li>lol</li>
+  </ul>
+  <br/><br/>
+  <form action="ex_1.html" name="myForm">
+   <input type="radio" name="add" value="city" />城市
+   <input type="radio" name="add" value="game" />游戏
+   &nbsp&nbsp请输入添加的内容<input type="text" name="name"></input>
+   <input type="submit" id="submit"></input>
+  </form>
+ </body>
+</html>

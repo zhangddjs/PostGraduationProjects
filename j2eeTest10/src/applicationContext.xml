@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 使用 hibernate.cfg.xml配置 sessionFactory -->
+	<!-- <bean id="sessionFactoryBean" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="configLocations">
+			<value>Classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean> -->
+	
+	<!-- Dao -->
+	<bean id="superDao" abstract="true">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
+	<bean id="bookDao" class="dao.BookDao" parent="superDao"></bean>
+	<bean id="publisherDao" class="dao.PublisherDao" parent="superDao"></bean>
+	
+	<!-- service 依赖注入常用方式1：设值注入-->
+	<bean id="bookAction" class="action.BookAction" scope="prototype">
+		<property name="bookDao" ref="bookDao" />
+		<property name="publisherDao" ref="publisherDao" />
+	</bean>
+	
+</beans>

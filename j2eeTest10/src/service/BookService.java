@@ -1,0 +1,58 @@
+package service;
+
+import java.util.List;
+
+import dao.BookDao;
+import dao.PublisherDao;
+import po.BookBean;
+import po.PublisherBean;
+
+public class BookService {
+	private BookDao bookDao;
+	private PublisherDao publisherDao;
+
+	// setter£¬getter·½·¨
+	public BookDao getBookDao() {
+		return bookDao;
+	}
+
+	public void setBookDao(BookDao bookDao) {
+		this.bookDao = bookDao;
+	}
+
+	public PublisherDao getpublisherDao() {
+		return publisherDao;
+	}
+
+	public void setpublisherDao(PublisherDao publisherDao) {
+		this.publisherDao = publisherDao;
+	}
+
+	/**
+	 * @category add a Book to book2.table
+	 * @param book
+	 *            (BookBean)
+	 * @param oid
+	 *            (int,publisher.id)
+	 */
+	public void addBook(BookBean book, int oid) {
+		PublisherBean publisher = publisherDao.getPub(oid);
+		book.setPublisher(publisher);
+		bookDao.addBook(book);
+	}
+
+	/**
+	 * @category get all books
+	 */
+	public void getBookList() {
+		List<BookBean> bookList = bookDao.getBookList();
+
+		if (bookList != null) {
+			for (BookBean book : bookList) {
+				System.out.println(book.getId() + ":" + book.getBookNum() + ":" + book.getBookName() + ":"
+						+ book.getAuthor() + ":" + book.getPrice() + ":" + book.getPublisher().getPublisherName());
+			}
+		}
+	}
+
+}

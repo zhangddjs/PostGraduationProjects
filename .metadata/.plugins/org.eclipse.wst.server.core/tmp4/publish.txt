@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Thu Nov 22 11:05:44 CST 2018
+org.eclipse.jst.jee.server\:ofh=C\:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\wtpwebapps\\ofh
+org.eclipse.jst.jee.server\:/binary\:D\:\\eclipseworkplace\\ofh\\WebRoot\\WEB-INF\\lib\\spring-web-4.1.3.RELEASE.jar=C\:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\wtpwebapps\\ofh\\WEB-INF\\lib\\spring-web-4.1.3.RELEASE.jar
+org.eclipse.jst.jee.server\:Project=C\:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 7.0\\wtpwebapps\\Project

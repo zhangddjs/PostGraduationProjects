@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;PublisherDao.java&apos; to &apos;j2eeTest5/src/dao&apos;&#x0D;&#x0A;- Original project: &apos;j2eeTest2&apos;&#x0D;&#x0A;- Destination element: &apos;j2eeTest5/src/dao&apos;&#x0D;&#x0A;- Original element: &apos;dao.PublisherDao.java&apos;" description="Copy compilation unit" destination="=j2eeTest5/src&lt;dao" element1="/src&lt;dao{PublisherDao.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1492136294307" units="1" version="1.0"/>
+</session>

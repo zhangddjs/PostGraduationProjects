@@ -1,0 +1,25 @@
+package test05;
+
+public class Application {
+
+	public static void main(String[] args) {
+		double a[] = new double[50];
+		PingXue b = new PingXue();
+		double sum = 0; 
+		System.out.println("请输入10个学生对老师该门课程的教学评分：");
+		for (int i = 0; i < 10; i++) {
+			a[i] = b.px();
+			sum += a[i];
+		}
+		double average = sum / 10;
+		System.out.println("该门课程的平均教学评分为："+average);
+		System.out.println();
+		System.out.println();
+		System.out.println("*******請輸入分數段的百分比*******");
+		BaiFenBi c[] = new BaiFenBi[3];
+		c[0].shuRu(a);
+		
+		
+	}
+
+}

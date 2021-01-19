@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ruanceBook/WebContent/searcj.html&apos; to &apos;search.html&apos;" description="Rename resource &apos;searcj.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/searcj.html" name="search.html" stamp="1481776847949" updateReferences="true"/>
+</session>

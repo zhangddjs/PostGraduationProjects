@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;checkForm.js&apos; to &apos;query&apos;&#x0D;&#x0A;- Original project: &apos;bookMarket&apos;&#x0D;&#x0A;- Destination element: &apos;query&apos;&#x0D;&#x0A;- Original element: &apos;checkForm.js&apos;" description="Copy file" element1="WebContent/script/checkForm.js" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1483447601443" target="/Project/WebRoot/js/query" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,5 @@
+127.0.0.1 - - [03/Apr/2016:08:51:07 +0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [03/Apr/2016:08:51:08 +0800] "GET /Shopping%20trolley/step1.html HTTP/1.1" 200 687
+0:0:0:0:0:0:0:1 - - [03/Apr/2016:08:51:12 +0800] "POST /Shopping%20trolley/step2.jsp HTTP/1.1" 200 1027
+0:0:0:0:0:0:0:1 - - [03/Apr/2016:08:51:17 +0800] "POST /Shopping%20trolley/step3.jsp HTTP/1.1" 200 664
+0:0:0:0:0:0:0:1 - - [03/Apr/2016:08:51:23 +0800] "POST /Shopping%20trolley/step3.jsp HTTP/1.1" 200 664

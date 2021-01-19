@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>计算器</title>
+<link rel="stylesheet" href="animate.min.css">
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #000;
+	font-size: 12px;
+	font-family: "微软雅黑";
+}
+
+.MainBoby {
+	border: #FF3 solid 1px;
+	width: 300px;
+	height: 385px;
+	margin: 0 auto;
+	margin-top: 150px;
+}
+
+.TopTitle {
+	width: 300px;
+	height: 40px;
+	margin-top: 5px;
+}
+
+.DisplayArea {
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+.InputArea {
+	margin-left: 4px;
+	margin-top: 5px;
+}
+
+#text {
+	text-align: right;
+	line-height: 20px;
+}
+</style>
+<script type="text/javascript">
+    window.number1;
+	window.number2;
+	window.operton;	
+	function getNumber(name1){
+		var x=document.getElementsByName(name1).item(0).value;
+		if(window.number1==undefined||window.number1=="+"||window.number1=="-"||window.number1=="*"||window.number1=="/"||window.operton=="="){
+			window.number1=x;
+		}else{
+			window.number1=window.number1+x;
+		}		
+		document.getElementsByName("display").item(0).value=window.number1;
+	}
+	function getOpertion(opertion){
+		var x=document.getElementsByName(opertion).item(0).value;
+		window.number2=window.number1;
+		window.number1=x;
+		window.operton=x;		
+		document.getElementsByName("display").item(0).value=window.number1;
+	}
+	function getResult(){
+		if(window.number1!=undefined||window.number1!=undefined){
+			var result=eval(window.number2+operton+window.number1);
+			window.operton="=";
+			document.getElementsByName("display").item(0).value=result;
+			}
+		}
+  </script>
+</head>
+<body>
+	<div class="MainBoby animated bounceIn">
+		<div class="TopTitle">
+			<h1 align="center">
+				<font color="#FFFF00">计算器</font>
+			</h1>
+		</div>
+		<div class="DisplayArea">
+			<input type="text" style="height: 40px; width: 285px;" name="display"
+				readonly="true" id="text" />
+		</div>
+		<div class="InputArea">
+			<input type="button" style="height: 70px; width: 70px;" name="1"
+				value="1" onClick="getNumber('1')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="2" value="2"
+				onClick="getNumber('2')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="3" value="3"
+				onClick="getNumber('3')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="+" value="+"
+				onClick="getOpertion('+')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="4" value="4"
+				onClick="getNumber('4')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="5" value="5"
+				onClick="getNumber('5')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="6" value="6"
+				onClick="getNumber('6')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="-" value="-"
+				onClick="getOpertion('-')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="7" value="7"
+				onClick="getNumber('7')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="8" value="8"
+				onClick="getNumber('8')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="9" value="9"
+				onClick="getNumber('9')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="*" value="*"
+				onClick="getOpertion('*')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="/" value="/"
+				onClick="getOpertion('/')" /> <input type="button"
+				style="height: 70px; width: 70px;" name="0" value="0"
+				onClick="getNumber('0')" /> <input type="button"
+				style="height: 70px; width: 144px;" name="=" value="="
+				onClick="getResult()" />
+		</div>
+	</div>
+</body>
+</html>

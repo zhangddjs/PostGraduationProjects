@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;j2eeTest/src/dbutil&apos;&#x0D;&#x0A;- Original project: &apos;J2EE_Student_JSPJavaBeanDemo2&apos;&#x0D;&#x0A;- Destination element: &apos;j2eeTest/src/dbutil&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     cn.edu.hfuu.util.DBUtil.java&#x0D;&#x0A;     cn.edu.hfuu.util.SetBean.java" description="Copy compilation units" destination="=j2eeTest/src&lt;dbutil" element1="/src&lt;cn.edu.hfuu.util{DBUtil.java" element2="/src&lt;cn.edu.hfuu.util{SetBean.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1490183125362" units="2" version="1.0"/>
+</session>

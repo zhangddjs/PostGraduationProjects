@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ 	<!-- 使用数据源配置sessionFactory -->    
+    <!-- 首先导入c3p0相关的jar包，配置数据源 -->   
+	<bean id="dataSource-c3p0" 
+           class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+           destroy-method="close" >
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/j2eebook" />
+        <property name="user" value="root" />
+        <property name="password" value="123456" />
+
+        <property name="maxPoolSize" value="5" />
+        <property name="minPoolSize" value="1" />
+        <property name="initialPoolSize" value="1" />
+        <property name="maxIdleTime" value="30" />
+    </bean>
+    
+     <!-- 添加sessionFactory bean ，注意，该类是Spring提供的 -->
+	<bean id="sessionFactoryBean" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" >  
+        <!-- 把数据源 bean 注入到sessionFactory的dataSource属性 -->
+        <property name="dataSource" ref="dataSource-c3p0" />
+       
+        <!-- 引入映射文件 -->
+        <property name="mappingResources">
+            <!-- 注入集合值 list-->            
+            <list>                  
+                <value>po/PublisherBean.hbm.xml</value>
+                <value>po/BookBean.hbm.xml</value>    
+            </list>  
+        </property>
+        <!-- 引入注解类 
+        <property name="annotatedClasses">  
+            <list>                  
+                <value>po.Student</value>
+                <value>po.Department</value>    
+            </list>  
+        </property>
+        -->
+           
+        <!-- hibernate的基本配置，如:方言，是否显示sql等 -->
+        <property name="hibernateProperties">
+           <!-- 注入集合值 props-->
+        	<props>
+        		<prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <!--继续添加关于hibernate的相关配置-->
+            </props>           
+        </property> 
+    </bean>
+    
+
+</beans>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>bookSearch</title>
+ </head>
+ <body bgcolor="GhostWhite">
+  <form action="#" method="post">
+   <table width="100%" cellspacing="10" cellpadding="0">
+    <tr><th bgcolor="LightCyan" align="left" width="100%" colspan="6">搜索</th></tr>
+	<tr>
+	 <td>书号:</td><td><input type="text" name="bookNumber"/></td>
+	 <td>书名:</td><td><input type="text" name="bookName"/></td>
+	 <td>作者:</td><td><input type="text" name="writer"/></td>
+	</tr>
+	<tr>
+	 <td>书籍类别:</td>
+	 <td>
+	  <select name="kind">
+	   <option>--请选择--</option>
+	   <option value="普通">普通</option>
+	   <option value="新书">新书</option>
+	   <option value="精品">精品</option>
+	  </select>
+	 </td>
+	 <td>出版社:</td>
+	 <td>
+	  <select name="publisher">
+	   <option>--请选择--</option>
+	   <option value="清华大学出版社">清华大学出版社</option>
+	   <option value="合肥大学出版社">合肥大学出版社</option>
+	  </select>
+	 </td>
+	 <td>库存位置</td>
+	 <td><input type="text" name="place"></input></td>
+	</tr>
+	<tr>
+	 <td align="center" colspan="6">
+	  <input type="submit" value="查询"/>
+	  <input type="reset"/>
+	 </td>
+   </table>
+  </form>
+ </body>
+</html>

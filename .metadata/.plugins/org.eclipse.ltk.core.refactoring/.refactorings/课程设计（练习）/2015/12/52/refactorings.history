@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Lookup.java&apos; to &apos;课程设计（练习）/src/package1&apos;&#x0D;&#x0A;- Original project: &apos;课程设计（练习）&apos;&#x0D;&#x0A;- Destination element: &apos;课程设计（练习）/src/package1&apos;&#x0D;&#x0A;- Original element: &apos;package1.Lookup.java&apos;" description="Copy compilation unit" destination="/src&lt;package1" element1="/src&lt;package1{Lookup.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1450932096647" units="1" version="1.0"/>
+</session>

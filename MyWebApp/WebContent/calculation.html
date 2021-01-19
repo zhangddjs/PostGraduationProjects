@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>calculation</title>
+<style type="text/css">
+	div{
+		margin-top: 10px; 
+	}
+	.result{
+		padding-left: 150px;
+	}
+</style>
+<script>
+	window.onload(){
+		var num1 = document.getElementsByName("NUM1").value();
+		alert("11");
+	}
+</script>
+</head>
+<body>
+	<form action="#">
+		<div>请输入第一个操作数：<input type="text" name="NUM1"></div>
+		<div>请输入第二个操作数：<input type="text" name="NUM2"></div>
+		<div>请选择操作：
+			<input type="radio" name="Func" value="plus" />&nbsp&nbsp + &nbsp&nbsp
+			<input type="radio" name="Func" value="minus" />&nbsp&nbsp - &nbsp&nbsp
+			<input type="radio" name="Func" value="mult" />&nbsp&nbsp * &nbsp&nbsp
+			<input type="radio" name="Func" value="chu" />&nbsp&nbsp / &nbsp&nbsp
+		</div>
+		<div class="result">
+			<input type="button" name="getResult" value="=">
+		</div>
+		<div>结果是：<input type="text" name="result"></div>
+	</form>
+</body>
+</html>

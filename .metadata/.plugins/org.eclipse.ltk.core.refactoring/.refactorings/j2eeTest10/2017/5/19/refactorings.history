@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;BookBean.java&apos; to &apos;j2eeProject2/src/po&apos;&#x0D;&#x0A;- Original project: &apos;j2eeTest10&apos;&#x0D;&#x0A;- Destination element: &apos;j2eeProject2/src/po&apos;&#x0D;&#x0A;- Original element: &apos;po.BookBean.java&apos;" description="Copy compilation unit" destination="=j2eeProject2/src&lt;po" element1="/src&lt;po{BookBean.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1494590674929" units="1" version="1.0"/>
+</session>

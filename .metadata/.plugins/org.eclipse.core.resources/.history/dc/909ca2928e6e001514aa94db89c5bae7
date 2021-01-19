@@ -1,0 +1,104 @@
+
+public class HighSchoolStudent {
+	String name;
+	String date;
+	String sex;
+	String IDNumber;
+	String MobileNumber;
+	String school;
+	String timetoschool;
+	String home;
+	String setname(String name){
+		this.name=name;
+		return name;
+	}
+	String setdate(String date){
+		this.date=date;
+		return date;
+
+	}
+	String setsex(String sex){
+		this.sex=sex;
+		return sex;
+	}
+	String setIDNumber(String IDNumber){
+		this.IDNumber=IDNumber;
+		return IDNumber;
+	}
+	String setMobileNumber(String MobileNumber){
+		this.MobileNumber=MobileNumber;
+		return MobileNumber;
+	}
+	String setschool(String school){
+		this.school=school;
+		return school;
+	}
+	String settimetoschool(String timetoschool){
+		this.timetoschool=timetoschool;
+		return timetoschool;
+	}
+	String sethome(String home){
+		this.home=home;
+		return home;
+	}
+	public HighSchoolStudent() {
+//		System.out.println();// TODO Auto-generated constructor stub
+	}
+	HighSchoolStudent(String name,String date,String sex,
+			String IDNumber,String MobileNumber,String school,
+			String timetoschool,String home){
+		this.setname(name);
+		this.setdate(date);
+		this.setsex(sex);
+		this.setIDNumber(IDNumber);
+		this.setMobileNumber(MobileNumber);
+		this.setschool(school);
+		this.settimetoschool(timetoschool);
+		this.sethome(home);
+/*		this.getname();
+		this.getdate();
+		this.getsex();
+		this.getIDNumber();
+		this.getMobileNumber();
+		this.getschool();
+		this.gettimetoschool();
+		this.gethome();
+*/
+		this.getinformation();
+	}
+	void getinformation(){
+		this.getname();
+		this.getdate();
+		this.getsex();
+		this.getIDNumber();
+		this.getMobileNumber();
+		this.getschool();
+		this.gettimetoschool();
+		this.gethome();
+	}
+	
+	void getname(){
+		System.out.println("name:"+name);
+	}
+	void getdate(){
+		System.out.println("birthday:"+date);
+	}
+	void getsex(){
+		System.out.println("sex:"+sex);
+	}
+	void getIDNumber(){
+		System.out.println("IDNumber:"+IDNumber);
+	}
+	void getMobileNumber(){
+		System.out.println("MobileNumber:"+MobileNumber);
+	}
+	void getschool(){
+		System.out.println("school:"+school);
+	}
+	void gettimetoschool(){
+		System.out.println("timetoschool:"+timetoschool);
+	}
+	void gethome(){
+		System.out.println("hometown:"+home);
+	}
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\AI人工智能\人工智能-课程实验"/>
+			<item value="D:\实验报告\J2EE作业\1 Spring入门与依赖注入\Spring_Ioc_scope"/>
+			<item value="D:\实验报告\J2EE作业\第3部分 Hibernate2\4 Hibernate持久化对象状态和Session缓存"/>
+			<item value="D:\javaweb课件\J2EE作业\MVC"/>
+			<item value="D:\javaweb课件\J2EE作业\zdd_j2ee_test1"/>
+			<item value="D:\javaweb课件\3 JavaBeanII\JavaBeanReflection"/>
+			<item value="D:\javaweb课件\4 JSP开发模式I\Student_JSPJavaBeanDemo2_2"/>
+			<item value="D:\eclipseworkplace"/>
+			<item value="D:\javaweb课程设计\laboratory"/>
+			<item value="D:\软件测试实验\实验1"/>
+			<item value="E:\eclipseworkplace"/>
+			<item value="E:\java课程设计\同学们的系统\课程管理系统"/>
+			<item value="E:\JAVA实验"/>
+			<item value="E:\JAVA实验\实验7"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="ResourceNavigator">
+		<item value="Aggregate for window 1442500077269" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item value="525" key="DIALOG_WIDTH"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+		<item value="598" key="DIALOG_HEIGHT"/>
+		<item value="50" key="DIALOG_X_ORIGIN"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

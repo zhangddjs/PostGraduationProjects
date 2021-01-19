@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Dao -->
+	<bean id="superDao" abstract="true">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
+	<bean id="userDao" class="dao.UserDao" parent="superDao"></bean>
+	
+	<!-- service 依赖注入常用方式1：设值注入-->
+	<bean id="userAction" class="action.UserAction" scope="prototype">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	
+</beans>

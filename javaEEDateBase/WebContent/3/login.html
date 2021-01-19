@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>登录界面</title>
+<script type="text/javascript">
+  	function  checkLogin(){
+		if(document.loginForm.username.value==""){
+			window.alert("请输入账号！");
+			document.loginForm.username.focus();
+			return false;
+		} 
+		if(document.loginForm.password.value==""){
+			document.loginForm.password.focus();
+			window.alert("请输入密码！");
+			return false;
+		}
+		if(document.loginForm.password.value.length<6||document.loginForm.password.value.length>=10){
+  			window.alert("密码必须是6-10位！");
+  			return false;
+  		}
+		if(document.loginForm.sex.value==""){
+  			window.alert("请选择性别！");
+  			return false;
+  		}
+		window.alert("提交成功！");
+
+		return true;
+	}
+</script>
+</head>
+<body>
+	<div>
+		<form method="post" action="#" name="loginForm"
+			onSubmit="return checkLogin()">
+			<table>
+				<tr>
+					<td>姓名：
+					<td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+
+				<tr>
+					<td>密码：
+					<td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+
+				<tr>
+					<td>性别：
+					<td>
+					<td><input type="radio" name="sex" value="man" />男&nbsp;&nbsp
+						<input type="radio" name="sex" value="woman" />女&nbsp;&nbsp</td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="sunmit" value="登录" /></td>
+					<td><input type="reset" name="reset" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

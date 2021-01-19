@@ -1,0 +1,34 @@
+
+public class Application {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HighSchoolStudent Zhang=new HighSchoolStudent();
+		Zhang.setname("Zhangdd");
+		Zhang.setdate("19951105");
+		Zhang.setsex("male");
+		Zhang.setIDNumber("320211199511054138");
+		Zhang.setMobileNumber("18326659653");
+		Zhang.setschool("Hefei University");
+		Zhang.settimetoschool("20140910");
+		Zhang.sethome("Wuxi");
+/*		Zhang.getname();
+		Zhang.getdate();
+		Zhang.getsex();
+		Zhang.getIDNumber();
+		Zhang.getMobileNumber();
+		Zhang.getschool();
+		Zhang.gettimetoschool();
+		Zhang.gethome();
+*/
+		Zhang.getinformation();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		HighSchoolStudent Zhang2=new HighSchoolStudent("Zhangdd2",
+		"19951106","female","320211199511054139","18326659654","Hefei University",
+		"20140911","Yixing");
+		
+	}
+
+}

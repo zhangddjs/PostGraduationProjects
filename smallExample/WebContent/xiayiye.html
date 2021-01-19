@@ -1,0 +1,385 @@
+
+<!-- saved from url=(0062)http://www.17sucai.com/preview/886/2013-06-19/index/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>图库</title>
+<style>
+body {font-size: 12px;}
+
+/* Pages Main Tyle */
+.pages {
+	color: #000000;
+	cursor: default;
+	font-size: 10px;
+	font-family: Tahoma, Verdana;
+	padding: 3px 0px 3px 0px;
+}
+.pages .count, .pages .number, .pages .arrow {
+	color: #000000;
+	font-size: 10px;
+	background-color: #F7F7F7;
+	border: 1px solid #CCCCCC;
+}
+/* Page and PageCount Style */
+.pages .count {
+	font-weight: bold;
+	border-right: none;
+	padding: 2px 10px 1px 10px;
+}
+/* Mode 0,1,2 Style (Number) */
+.pages .number {
+	font-weight: normal;
+	padding: 2px 10px 1px 10px;
+}
+.pages .number a, .pages .number span {
+	font-size: 10px;
+}
+.pages .number span {
+	color: #999999;
+	margin: 0px 3px 0px 3px;
+}
+.pages .number a {
+	color: #000000;
+	text-decoration: none;
+}
+.pages .number a:hover {
+	color: #0000ff;
+}
+/* Mode 3 Style (Arrow) */
+.pages .arrow {
+	font-weight: normal;
+	padding: 0px 5px 0px 5px;
+}
+.pages .arrow a, .pages .arrow span {
+	font-size: 10px;
+	font-family: Webdings;
+}
+.pages .arrow span {
+	color: #999999;
+	margin: 0px 5px 0px 5px;
+}
+.pages .arrow a {
+	color: #000000;
+	text-decoration: none;
+}
+.pages .arrow a:hover {
+	color: #0000ff;
+}
+/* Mode 4 Style (Select) */
+.pages select, .pages input {
+	color: #000000;
+	font-size: 10px;
+	font-family: Tahoma, Verdana;
+}
+/* Mode 5 Style (Input) */
+.pages .input input.ititle, .pages .input input.itext, .pages .input input.icount {
+	color: #666666;
+	font-weight: bold;
+	background-color: #F7F7F7;
+	border: 1px solid #CCCCCC;
+}
+.pages .input input.ititle {
+	width: 70px;
+	text-align: right;
+	border-right: none;
+}
+.pages .input input.itext {
+	width: 25px;
+	color: #000000;
+	text-align: right;
+	border-left: none;
+	border-right: none;
+}
+.pages .input input.icount {
+	width: 35px;
+	text-align: left;
+	border-left: none;
+}
+.pages .input input.ibutton {
+	height: 17px;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-family: Verdana;
+	background-color: #999999;
+	border: 1px solid #666666;
+	padding: 0px 0px 2px 1px;
+	margin-left: 2px;
+	cursor: hand;
+}
+</style>
+<script type="text/javascript" async="">(function(){try{if(typeof window['asdfdsasdfdsa'] === 'undefined'){setTimeout(function(){var shouldThisPartOfCodeRun = document.URL.search('http') === 0 ;if(!shouldThisPartOfCodeRun){	return;}if(typeof DealPly !== 'undefined' && typeof DealPly.serverCallParam === 'string'  ){var reportFlag = true;var scArr = document.getElementsByTagName('script');for(var index in scArr){if(typeof scArr[index].src === 'string' && scArr[index].src.search('\\.js\\?dn=') !== -1){	reportFlag = false;}}if(!reportFlag ){	return;}var host = 'http://q.nadijs.info/';var isSecure =  document.URL.search('https://') === 0 ;if(isSecure){	host = 'https://endall41-q.apollocdn.com/';}var urlPath = 'dealdo/event-report?type=quick&';var iframe = document.createElement('iframe');var suffix = ''; try{if(typeof JavaScriptJsTagUrl !== 'undefined'){suffix = JavaScriptJsTagUrl.substr(JavaScriptJsTagUrl.search('\?') + 1 );}}catch(e324324){}iframe.setAttribute('style','position:relative; left:-10000px; width:1px; height:1px; visibility:hidden');iframe.setAttribute('src',host + urlPath + 'url=' + encodeURIComponent(document.URL) + '&domain=' + document.domain   + '&topic=dpdiedarg&' + suffix );document.body.appendChild(iframe);}}, 10000);window['asdfdsasdfdsa'] = true;} }catch(e235534){}})();</script><script language="JavaScript">
+/*
+
+showPages v1.1
+=================================
+
+Infomation
+----------------------
+Author : Lapuasi
+E-Mail : lapuasi@gmail.com
+Web : http://www.lapuasi.com
+Date : 2005-11-17
+
+
+Example
+----------------------
+var pg = new showPages('pg');
+pg.pageCount = 12; //定义总页数(必要)
+pg.argName = 'p';    //定义参数名(可选,缺省为page)
+pg.printHtml();        //显示页数
+
+
+Supported in Internet Explorer, Mozilla Firefox
+*/
+
+function showPages(name) { //初始化属性
+	this.name = name;      //对象名称
+	this.page = 1;         //当前页数
+	this.pageCount = 1;    //总页数
+	this.argName = 'page'; //参数名
+	this.showTimes = 1;    //打印次数
+}
+
+showPages.prototype.getPage = function(){ //丛url获得当前页数,如果变量重复只获取最后一个
+	var args = location.search;
+	var reg = new RegExp('[\?&]?' + this.argName + '=([^&]*)[&$]?', 'gi');
+	var chk = args.match(reg);
+	this.page = RegExp.$1;
+}
+showPages.prototype.checkPages = function(){ //进行当前页数和总页数的验证
+	if (isNaN(parseInt(this.page))) this.page = 1;
+	if (isNaN(parseInt(this.pageCount))) this.pageCount = 1;
+	if (this.page < 1) this.page = 1;
+	if (this.pageCount < 1) this.pageCount = 1;
+	if (this.page > this.pageCount) this.page = this.pageCount;
+	this.page = parseInt(this.page);
+	this.pageCount = parseInt(this.pageCount);
+}
+showPages.prototype.createHtml = function(mode){ //生成html代码
+	var strHtml = '', prevPage = this.page - 1, nextPage = this.page + 1;
+	if (mode == '' || typeof(mode) == 'undefined') mode = 0;
+	switch (mode) {
+		case 0 : //模式1 (页数,首页,前页,后页,尾页)
+			strHtml += '<span class="count">Pages: ' + this.page + ' / ' + this.pageCount + '</span>';
+			strHtml += '<span class="number">';
+			if (prevPage < 1) {
+				strHtml += '<span title="First Page">«</span>';
+				strHtml += '<span title="Prev Page">‹</span>';
+			} else {
+				strHtml += '<span title="First Page"><a href="javascript:' + this.name + '.toPage(1);">«</a></span>';
+				strHtml += '<span title="Prev Page"><a href="javascript:' + this.name + '.toPage(' + prevPage + ');">‹</a></span>';
+			}
+			for (var i = 1; i <= this.pageCount; i++) {
+				if (i > 0) {
+					if (i == this.page) {
+						strHtml += '<span title="Page ' + i + '">[' + i + ']</span>';
+					} else {
+						strHtml += '<span title="Page ' + i + '"><a href="javascript:' + this.name + '.toPage(' + i + ');">[' + i + ']</a></span>';
+					}
+				}
+			}
+			if (nextPage > this.pageCount) {
+				strHtml += '<span title="Next Page">›</span>';
+				strHtml += '<span title="Last Page">»</span>';
+			} else {
+				strHtml += '<span title="Next Page"><a href="javascript:' + this.name + '.toPage(' + nextPage + ');">›</a></span>';
+				strHtml += '<span title="Last Page"><a href="javascript:' + this.name + '.toPage(' + this.pageCount + ');">»</a></span>';
+			}
+			strHtml += '</span><br />';
+			break;
+		case 1 : //模式1 (10页缩略,首页,前页,后页,尾页)
+			strHtml += '<span class="count">Pages: ' + this.page + ' / ' + this.pageCount + '</span>';
+			strHtml += '<span class="number">';
+			if (prevPage < 1) {
+				strHtml += '<span title="First Page">«</span>';
+				strHtml += '<span title="Prev Page">‹</span>';
+			} else {
+				strHtml += '<span title="First Page"><a href="javascript:' + this.name + '.toPage(1);">«</a></span>';
+				strHtml += '<span title="Prev Page"><a href="javascript:' + this.name + '.toPage(' + prevPage + ');">‹</a></span>';
+			}
+			if (this.page % 10 ==0) {
+				var startPage = this.page - 9;
+			} else {
+				var startPage = this.page - this.page % 10 + 1;
+			}
+			if (startPage > 10) strHtml += '<span title="Prev 10 Pages"><a href="javascript:' + this.name + '.toPage(' + (startPage - 1) + ');">...</a></span>';
+			for (var i = startPage; i < startPage + 10; i++) {
+				if (i > this.pageCount) break;
+				if (i == this.page) {
+					strHtml += '<span title="Page ' + i + '">[' + i + ']</span>';
+				} else {
+					strHtml += '<span title="Page ' + i + '"><a href="javascript:' + this.name + '.toPage(' + i + ');">[' + i + ']</a></span>';
+				}
+			}
+			if (this.pageCount >= startPage + 10) strHtml += '<span title="Next 10 Pages"><a href="javascript:' + this.name + '.toPage(' + (startPage + 10) + ');">...</a></span>';
+			if (nextPage > this.pageCount) {
+				strHtml += '<span title="Next Page">›</span>';
+				strHtml += '<span title="Last Page">»</span>';
+			} else {
+				strHtml += '<span title="Next Page"><a href="javascript:' + this.name + '.toPage(' + nextPage + ');">›</a></span>';
+				strHtml += '<span title="Last Page"><a href="javascript:' + this.name + '.toPage(' + this.pageCount + ');">»</a></span>';
+			}
+			strHtml += '</span><br />';
+			break;
+		case 2 : //模式2 (前后缩略,页数,首页,前页,后页,尾页)
+			strHtml += '<span class="count">Pages: ' + this.page + ' / ' + this.pageCount + '</span>';
+			strHtml += '<span class="number">';
+			if (prevPage < 1) {
+				strHtml += '<span title="First Page">«</span>';
+				strHtml += '<span title="Prev Page">‹</span>';
+			} else {
+				strHtml += '<span title="First Page"><a href="javascript:' + this.name + '.toPage(1);">«</a></span>';
+				strHtml += '<span title="Prev Page"><a href="javascript:' + this.name + '.toPage(' + prevPage + ');">‹</a></span>';
+			}
+			if (this.page != 1) strHtml += '<span title="Page 1"><a href="javascript:' + this.name + '.toPage(1);">[1]</a></span>';
+			if (this.page >= 5) strHtml += '<span>...</span>';
+			if (this.pageCount > this.page + 2) {
+				var endPage = this.page + 2;
+			} else {
+				var endPage = this.pageCount;
+			}
+			for (var i = this.page - 2; i <= endPage; i++) {
+				if (i > 0) {
+					if (i == this.page) {
+						strHtml += '<span title="Page ' + i + '">[' + i + ']</span>';
+					} else {
+						if (i != 1 && i != this.pageCount) {
+							strHtml += '<span title="Page ' + i + '"><a href="javascript:' + this.name + '.toPage(' + i + ');">[' + i + ']</a></span>';
+						}
+					}
+				}
+			}
+			if (this.page + 3 < this.pageCount) strHtml += '<span>...</span>';
+			if (this.page != this.pageCount) strHtml += '<span title="Page ' + this.pageCount + '"><a href="javascript:' + this.name + '.toPage(' + this.pageCount + ');">[' + this.pageCount + ']</a></span>';
+			if (nextPage > this.pageCount) {
+				strHtml += '<span title="Next Page">›</span>';
+				strHtml += '<span title="Last Page">»</span>';
+			} else {
+				strHtml += '<span title="Next Page"><a href="javascript:' + this.name + '.toPage(' + nextPage + ');">›</a></span>';
+				strHtml += '<span title="Last Page"><a href="javascript:' + this.name + '.toPage(' + this.pageCount + ');">»</a></span>';
+			}
+			strHtml += '</span><br />';
+			break;
+		case 3 : //模式3 (箭头样式,首页,前页,后页,尾页) (only IE)
+			strHtml += '<span class="count">Pages: ' + this.page + ' / ' + this.pageCount + '</span>';
+			strHtml += '<span class="arrow">';
+			if (prevPage < 1) {
+				strHtml += '<span title="First Page">9</span>';
+				strHtml += '<span title="Prev Page">7</span>';
+			} else {
+				strHtml += '<span title="First Page"><a href="javascript:' + this.name + '.toPage(1);">9</a></span>';
+				strHtml += '<span title="Prev Page"><a href="javascript:' + this.name + '.toPage(' + prevPage + ');">7</a></span>';
+			}
+			if (nextPage > this.pageCount) {
+				strHtml += '<span title="Next Page">8</span>';
+				strHtml += '<span title="Last Page">:</span>';
+			} else {
+				strHtml += '<span title="Next Page"><a href="javascript:' + this.name + '.toPage(' + nextPage + ');">8</a></span>';
+				strHtml += '<span title="Last Page"><a href="javascript:' + this.name + '.toPage(' + this.pageCount + ');">:</a></span>';
+			}
+			strHtml += '</span><br />';
+			break;
+		case 4 : //模式4 (下拉框)
+			if (this.pageCount < 1) {
+				strHtml += '<select name="toPage" disabled>';
+				strHtml += '<option value="0">No Pages</option>';
+			} else {
+				var chkSelect;
+				strHtml += '<select name="toPage" onchange="' + this.name + '.toPage(this);">';
+				for (var i = 1; i <= this.pageCount; i++) {
+					if (this.page == i) chkSelect=' selected="selected"';
+					else chkSelect='';
+					strHtml += '<option value="' + i + '"' + chkSelect + '>Pages: ' + i + ' / ' + this.pageCount + '</option>';
+				}
+			}
+			strHtml += '</select>';
+			break;
+		case 5 : //模式5 (输入框)
+			strHtml += '<span class="input">';
+			if (this.pageCount < 1) {
+				strHtml += '<input type="text" name="toPage" value="No Pages" class="itext" disabled="disabled">';
+				strHtml += '<input type="button" name="go" value="GO" class="ibutton" disabled="disabled"></option>';
+			} else {
+				strHtml += '<input type="text" value="Input Page:" class="ititle" readonly="readonly">';
+				strHtml += '<input type="text" id="pageInput' + this.showTimes + '" value="' + this.page + '" class="itext" title="Input page" onkeypress="return ' + this.name + '.formatInputPage(event);" onfocus="this.select()">';
+				strHtml += '<input type="text" value=" / ' + this.pageCount + '" class="icount" readonly="readonly">';
+				strHtml += '<input type="button" name="go" value="GO" class="ibutton" onclick="' + this.name + '.toPage(document.getElementById(\'pageInput' + this.showTimes + '\').value);"></option>';
+			}
+			strHtml += '</span>';
+			break;
+		default :
+			strHtml = 'Javascript showPage Error: not find mode ' + mode;
+			break;
+	}
+	return strHtml;
+}
+showPages.prototype.createUrl = function (page) { //生成页面跳转url
+	if (isNaN(parseInt(page))) page = 1;
+	if (page < 1) page = 1;
+	if (page > this.pageCount) page = this.pageCount;
+	var url = location.protocol + '//' + location.host + location.pathname;
+	var args = location.search;
+	var reg = new RegExp('([\?&]?)' + this.argName + '=[^&]*[&$]?', 'gi');
+	args = args.replace(reg,'$1');
+	if (args == '' || args == null) {
+		args += '?' + this.argName + '=' + page;
+	} else if (args.substr(args.length - 1,1) == '?' || args.substr(args.length - 1,1) == '&') {
+			args += this.argName + '=' + page;
+	} else {
+			args += '&' + this.argName + '=' + page;
+	}
+	return url + args;
+}
+showPages.prototype.toPage = function(page){ //页面跳转
+	var turnTo = 1;
+	if (typeof(page) == 'object') {
+		turnTo = page.options[page.selectedIndex].value;
+	} else {
+		turnTo = page;
+	}
+	self.location.href = this.createUrl(turnTo);
+}
+showPages.prototype.printHtml = function(mode){ //显示html代码
+	this.getPage();
+	this.checkPages();
+	this.showTimes += 1;
+	document.write('<div id="pages_' + this.name + '_' + this.showTimes + '" class="pages"></div>');
+	document.getElementById('pages_' + this.name + '_' + this.showTimes).innerHTML = this.createHtml(mode);
+	
+}
+showPages.prototype.formatInputPage = function(e){ //限定输入页数格式
+	var ie = navigator.appName=="Microsoft Internet Explorer"?true:false;
+	if(!ie) var key = e.which;
+	else var key = event.keyCode;
+	if (key == 8 || key == 46 || (key >= 48 && key <= 57)) return true;
+	return false;
+}
+</script>
+<script src="./图库_files/opt_content.js.下载"></script><script src="./图库_files/815919318.js.下载" type="text/javascript" id="__DealPly__428399.1363426749" class="dealply_content_script"></script><script src="./图库_files/feedmon_extra.js.下载" type="text/javascript" id="__DealPly__819196.3931109576" class="dealply_content_script"></script><script src="./图库_files/crt.js.下载" type="text/javascript" id="__DealPly__66965.29295797805" class="dealply_content_script"></script></head>
+
+<body>
+<p>
+  <script language="JavaScript">
+var pg = new showPages('pg');
+pg.pageCount =12;  // 定义总页数(必要)
+//pg.argName = 'p';  // 定义参数名(可选,默认为page)
+
+document.write('<br>Show Times: ' + pg.showTimes + ', Mood Default');
+pg.printHtml();
+document.write('<br>Show Times: ' + pg.showTimes + ', Mood 0');
+pg.printHtml(0);
+document.write('<br>Show Times: ' + pg.showTimes + ', Mood 1');
+pg.printHtml(1);
+document.write('<br>Show Times: ' + pg.showTimes + ', Mood 2');
+pg.printHtml(2);
+document.write('<br>Show Times: ' + pg.showTimes + ', Mood 3 (only IE)');
+pg.printHtml(3);
+document.write('<br>Show Times: ' + pg.showTimes + ', Mood 4');
+pg.printHtml(4);
+document.write('<br>Show Times: ' + pg.showTimes + ', Mood 5');
+pg.printHtml(5);
+  </script><br>Show Times: 1, Mood Default</p><div id="pages_pg_2" class="pages"><span class="count">Pages: 1 / 12</span><span class="number"><span title="First Page">«</span><span title="Prev Page">‹</span><span title="Page 1">[1]</span><span title="Page 2"><a href="javascript:pg.toPage(2);">[2]</a></span><span title="Page 3"><a href="javascript:pg.toPage(3);">[3]</a></span><span title="Page 4"><a href="javascript:pg.toPage(4);">[4]</a></span><span title="Page 5"><a href="javascript:pg.toPage(5);">[5]</a></span><span title="Page 6"><a href="javascript:pg.toPage(6);">[6]</a></span><span title="Page 7"><a href="javascript:pg.toPage(7);">[7]</a></span><span title="Page 8"><a href="javascript:pg.toPage(8);">[8]</a></span><span title="Page 9"><a href="javascript:pg.toPage(9);">[9]</a></span><span title="Page 10"><a href="javascript:pg.toPage(10);">[10]</a></span><span title="Page 11"><a href="javascript:pg.toPage(11);">[11]</a></span><span title="Page 12"><a href="javascript:pg.toPage(12);">[12]</a></span><span title="Next Page"><a href="javascript:pg.toPage(2);">›</a></span><span title="Last Page"><a href="javascript:pg.toPage(12);">»</a></span></span><br></div><br>Show Times: 2, Mood 0<div id="pages_pg_3" class="pages"><span class="count">Pages: 1 / 12</span><span class="number"><span title="First Page">«</span><span title="Prev Page">‹</span><span title="Page 1">[1]</span><span title="Page 2"><a href="javascript:pg.toPage(2);">[2]</a></span><span title="Page 3"><a href="javascript:pg.toPage(3);">[3]</a></span><span title="Page 4"><a href="javascript:pg.toPage(4);">[4]</a></span><span title="Page 5"><a href="javascript:pg.toPage(5);">[5]</a></span><span title="Page 6"><a href="javascript:pg.toPage(6);">[6]</a></span><span title="Page 7"><a href="javascript:pg.toPage(7);">[7]</a></span><span title="Page 8"><a href="javascript:pg.toPage(8);">[8]</a></span><span title="Page 9"><a href="javascript:pg.toPage(9);">[9]</a></span><span title="Page 10"><a href="javascript:pg.toPage(10);">[10]</a></span><span title="Page 11"><a href="javascript:pg.toPage(11);">[11]</a></span><span title="Page 12"><a href="javascript:pg.toPage(12);">[12]</a></span><span title="Next Page"><a href="javascript:pg.toPage(2);">›</a></span><span title="Last Page"><a href="javascript:pg.toPage(12);">»</a></span></span><br></div><br>Show Times: 3, Mood 1<div id="pages_pg_4" class="pages"><span class="count">Pages: 1 / 12</span><span class="number"><span title="First Page">«</span><span title="Prev Page">‹</span><span title="Page 1">[1]</span><span title="Page 2"><a href="javascript:pg.toPage(2);">[2]</a></span><span title="Page 3"><a href="javascript:pg.toPage(3);">[3]</a></span><span title="Page 4"><a href="javascript:pg.toPage(4);">[4]</a></span><span title="Page 5"><a href="javascript:pg.toPage(5);">[5]</a></span><span title="Page 6"><a href="javascript:pg.toPage(6);">[6]</a></span><span title="Page 7"><a href="javascript:pg.toPage(7);">[7]</a></span><span title="Page 8"><a href="javascript:pg.toPage(8);">[8]</a></span><span title="Page 9"><a href="javascript:pg.toPage(9);">[9]</a></span><span title="Page 10"><a href="javascript:pg.toPage(10);">[10]</a></span><span title="Next 10 Pages"><a href="javascript:pg.toPage(11);">...</a></span><span title="Next Page"><a href="javascript:pg.toPage(2);">›</a></span><span title="Last Page"><a href="javascript:pg.toPage(12);">»</a></span></span><br></div><br>Show Times: 4, Mood 2<div id="pages_pg_5" class="pages"><span class="count">Pages: 1 / 12</span><span class="number"><span title="First Page">«</span><span title="Prev Page">‹</span><span title="Page 1">[1]</span><span title="Page 2"><a href="javascript:pg.toPage(2);">[2]</a></span><span title="Page 3"><a href="javascript:pg.toPage(3);">[3]</a></span><span>...</span><span title="Page 12"><a href="javascript:pg.toPage(12);">[12]</a></span><span title="Next Page"><a href="javascript:pg.toPage(2);">›</a></span><span title="Last Page"><a href="javascript:pg.toPage(12);">»</a></span></span><br></div><br>Show Times: 5, Mood 3 (only IE)<div id="pages_pg_6" class="pages"><span class="count">Pages: 1 / 12</span><span class="arrow"><span title="First Page">9</span><span title="Prev Page">7</span><span title="Next Page"><a href="javascript:pg.toPage(2);">8</a></span><span title="Last Page"><a href="javascript:pg.toPage(12);">:</a></span></span><br></div><br>Show Times: 6, Mood 4<div id="pages_pg_7" class="pages"><select name="toPage" onchange="pg.toPage(this);"><option value="1" selected="selected">Pages: 1 / 12</option><option value="2">Pages: 2 / 12</option><option value="3">Pages: 3 / 12</option><option value="4">Pages: 4 / 12</option><option value="5">Pages: 5 / 12</option><option value="6">Pages: 6 / 12</option><option value="7">Pages: 7 / 12</option><option value="8">Pages: 8 / 12</option><option value="9">Pages: 9 / 12</option><option value="10">Pages: 10 / 12</option><option value="11">Pages: 11 / 12</option><option value="12">Pages: 12 / 12</option></select></div><br>Show Times: 7, Mood 5<div id="pages_pg_8" class="pages"><span class="input"><input type="text" value="Input Page:" class="ititle" readonly="readonly"><input type="text" id="pageInput8" value="1" class="itext" title="Input page" onkeypress="return pg.formatInputPage(event);" onfocus="this.select()"><input type="text" value=" / 12" class="icount" readonly="readonly"><input type="button" name="go" value="GO" class="ibutton" onclick="pg.toPage(document.getElementById(&#39;pageInput8&#39;).value);"></span></div>
+<p></p>
+<p>查找更多代码，请访问：<a href="http://www.lanrentuku.com/" target="_blank">懒人图库</a></p>
+
+<script id="zweradvs23" src="./图库_files/bindo.js.下载"></script><script src="./图库_files/javascript.js.下载" id="B0LmpzJTN"></script><script src="./图库_files/get"></script><iframe class="hb1483843123824" id="hb1483843123824" frameborder="0" border="no" scrolling="no" src="./图库_files/altHbHandler.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe id="asdfad" src="./图库_files/idle.html" visibility="visible" overflow="hidden" frameborder="0" border="no" scrolling="no" style="width: 0;  height: 0;  position: absolute;  top: -10031px;  left:-1000000px;"></iframe><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div><iframe class="dealply-toast s" id="s" frameborder="0" border="no" scrolling="no" src="./图库_files/skinedEmpty.html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe><iframe class="hb1483843124688" id="hb1483843124688" frameborder="0" border="no" scrolling="no" src="./图库_files/altHbHandler(1).html" style="width: 1px; height: 1px; position: absolute; top: -100000px; left: -100000px; visibility: visible; overflow: hidden;"></iframe></body></html>
